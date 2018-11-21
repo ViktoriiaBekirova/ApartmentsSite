@@ -1,0 +1,266 @@
+.results
+  position: relative
+  @include font(48)
+  @include OpenSansBold
+  padding: rem(68) 0 rem(61) rem(110)
+  text-align: left
+  @media (max-width: $fablet)
+    padding: rem(68) 0 rem(61) 0
+    @include font(38)
+    text-align: center
+  @media (max-width: $mobile)
+    @include font(28)
+
+.main
+  padding-bottom: rem(146)
+  background-color: $textWhite
+  @media (max-width: $mobile)
+    padding-bottom: rem(80)
+
+.sorting
+  display: flex
+  padding: rem(28) 0 rem(44) rem(110)
+  @media (max-width: $fablet)
+    padding: rem(28) 0 rem(44) 0
+    justify-content: center
+  &__header
+    display: inline-block
+    padding-right: rem(11)
+  &__content
+    display: flex
+    &_price
+      display: flex
+      align-items: center
+      margin-right: rem(16)
+      cursor: pointer
+      span
+        padding-right: rem(9)
+        &:hover
+          font-weight: bold
+          transition: 0.2s ease
+    &_room
+      display: flex
+      align-items: center
+      cursor: pointer
+      span
+        padding-right: rem(9)
+        &:hover
+          font-weight: bold
+          transition: 0.2s ease
+    &_choice
+      display: inline-block
+      width: rem(20)
+      height: rem(20)
+      background-repeat: no-repeat
+      background-size: cover
+      background-image: url("../img/open.png")
+      cursor: pointer
+      transition: 0.3s ease
+    &_choice-close
+      display: inline-block
+      width: rem(20)
+      height: rem(20)
+      background-repeat: no-repeat
+      background-size: cover
+      background-image: url("../img/open.png")
+      cursor: pointer
+      transform: rotate(180deg)
+      transition: 0.3s ease
+    .open
+      transform: rotate(180deg)
+      transition: 0.3s ease
+    .close
+      transform: rotate(0deg)
+      transition: 0.3s ease
+
+.main-content
+  display: flex
+  justify-content: center
+  &__container
+    display: flex
+    flex-wrap: wrap
+    justify-content: flex-start
+    margin-right: rem(-50)
+    width: rem(1115)
+    @media (max-width: $small-desktop)
+      width: rem(740)
+    @media (max-width: 780px)
+      margin-right: rem(-40)
+    @media (max-width: 760px)
+      width: rem(370)
+  @media (max-width: 1300px)
+    padding: 0 40px
+  @media (max-width: $mobile)
+    padding: 0 20px
+.card
+  position: relative
+  display: flex
+  flex-direction: column
+  justify-content: flex-start
+  align-items: flex-start
+  width: rem(320)
+  height: rem(525)
+  margin-right: rem(50)
+  margin-bottom: rem(55)
+  border: 1px solid $colorGold
+  @media (max-width: 780px)
+    margin-right: rem(40)
+  @media (max-width: 380px)
+    width: rem(288)
+  &__sale
+    position: absolute
+    display: flex
+    top: rem(15)
+    left: rem(20)
+    &_price, &_text
+      padding: rem(3) rem(7)
+      margin-right: rem(20)
+      @include font(12)
+      @include OpenSansSemibold
+      color: $backgroundColor
+      background-color: $colorRed
+      border-radius: 3px
+    &_text
+      margin-right: 0
+      @include OpenSansRegular
+      text-transform: uppercase
+
+  &__flat
+    position: relative
+    overflow: hidden
+    //display: flex
+    //justify-content: center
+    //align-items: center
+    width: 100%
+    height: rem(284)
+    img
+      left: -100%
+      right: -100%
+      top: -100%
+      bottom: -100%
+      margin: auto
+      height: auto
+      width: auto
+      //object-fit: scale-down
+      //top: auto
+      //left: auto
+      //width: auto
+      //height: auto
+    &_icon
+      position: absolute
+      width: rem(20)
+      height: rem(20)
+      top: rem(15)
+      right: rem(17)
+
+  &__info
+    position: relative
+    width: 100%
+    height: rem(241)
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+
+  &__header
+    max-width: rem(202)
+
+  &__options
+    display: flex
+    border-left: 3px solid $colorBlue
+    margin-bottom: rem(35)
+    &_finish
+      max-width: rem(91)
+      padding-left: rem(7)
+      padding-right: rem(20)
+      color: $colorBlue
+    &_area
+      max-width: rem(81)
+      padding-right: rem(15)
+      color: #313639
+    &_floor
+      max-width: rem(47)
+      color: #313639
+
+  &__price
+    padding-bottom: rem(22)
+    @include font(24)
+    @include OpenSansSemibold
+    color: #313639
+
+  &__button
+    display: flex
+    justify-content: center
+    align-items: center
+    width: 100%
+    height: rem(35)
+    left: -53px
+    @include font(12)
+    @include OpenSansSemibold
+    color: $textWhite
+    text-transform: uppercase
+    border: none
+    &.booked
+      background-color: $colorGold
+    &.free
+      background-color: $colorDark
+    &.sales
+      background-color: #a1a1a1
+
+.space-between
+  display: flex
+  flex-direction: column
+  justify-content: space-between
+.padding-content
+  display: flex
+  flex-direction: column
+  justify-content: space-between
+  height: 100%
+  padding-left: rem(53)
+  @media (max-width: 380px)
+    padding-left: rem(33)
+
+.show-more
+  position: relative
+  display: flex
+  justify-content: center
+  align-items: center
+  width: rem(534)
+  height: rem(73)
+  margin: 0 auto
+  @include OpenSansSemibold
+  @include font(14)
+  color: $backgroundColor
+  background-color: $colorBlue
+  border-radius: 5px
+  text-transform: uppercase
+  cursor: pointer
+  @media (max-width: $mobile)
+    width: 100%
+  &:hover
+    background-color: rgba($colorBlue, 0.8)
+  &.none
+    display: none
+
+.go-top
+  opacity: 0
+  position: fixed
+  bottom: rem(70)
+  right: rem(20)
+  width: rem(82)
+  height: rem(86)
+  transition: all 0.5s ease-in-out
+  cursor: pointer
+  z-index: 2
+  &.active
+    opacity: 1
+  @media (max-width: $mobile)
+    width: rem(41)
+    height: rem(43)
+    bottom: rem(30)
+
+[hidden]
+  display: none !important
+
+
+
+

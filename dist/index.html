@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Kelnik</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <div class="content">
+        <div class="header">
+            <div class="header-container">
+                <div class="left-block">
+                    <div class="header__logo">
+                        <img src="./img/logo-main.png" alt="logo">
+                    </div>
+                    <div class="header__menu">
+                        <div class="menu-header">Меню</div>
+                        <div class="menu-close">
+                            <img src="./img/close-icon-white.svg" alt="logo">
+                        </div>
+                        <ul class="menu">
+                            <li class="menu__link">объекты</li>
+                            <li class="menu__link">компания</li>
+                            <li class="menu__link">как купить</li>
+                            <li class="menu__link">агентам</li>
+                            <li class="menu__link">регионам</li>
+                            <li class="menu__link">акции</li>
+                            <li class="menu__link">контакты</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="header__back-call">
+                    <div class="back-call">
+                        <a class="back-call__tel" href="tel:+8888888898">8 888 88 88 98</a>
+                        <a class="back-call__text" href="tel:+8888888898">Звони скорее!</a>
+                    </div>
+                </div>
+                <div class="back-call-img">
+                    <a href="tel:+8888888898"><img src="./img/call-icon.svg" alt="call"></a>
+                </div>
+            </div>
+        </div>
+        <div class="go-top">
+            <img src="./img/icon-top.png" alt="top">
+        </div>
+        <div class="wrapper">
+            <div class="results"></div>
+        </div>
+        <div class="wrapper">
+            <div class="main">
+                <div class="sorting">
+                    <div class="sorting__header"><span>Сортировать по:</span></div>
+                    <div class="sorting__content">
+                        <div class="sorting__content_price">
+                            <span>Цене</span>
+                            <div class="sorting__content_choice"></div>
+                        </div>
+                        <div class="sorting__content_room">
+                            <span>Комнатам</span>
+                            <div class="sorting__content_choice-close"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="main-content">
+                    <div class="main-content__container">
+                        <div class="card" hidden>
+                            <div class="card__sale">
+                                <div class="card__sale_price"></div>
+                                <div class="card__sale_text"></div>
+                            </div>
+                            <div class="card__flat">
+                                <img id="img-card" src="./img/room2.png" alt="foto_flat">
+                                <div class="card__flat_icon">
+                                    <img id="img-star" src="./img/room2.png" alt="tag">
+                                </div>
+                            </div>
+                            <div class="card__info">
+                                <div class="padding-content">
+                                    <h1 class="card__header">header</h1>
+                                    <div class="space-between">
+                                        <div class="card__options">
+                                            <div class="card__options_finish"><p></p></div>
+                                            <div class="card__options_area"><p></p></div>
+                                            <div class="card__options_floor"><p></p></div>
+                                        </div>
+                                        <div class="card__price"></div>
+                                    </div>
+                                </div>
+                                <button class="card__button"></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="show-more">показать еще 20</div>
+
+            </div>
+        </div>
+        <div class="footer">
+            <div class="footer-content">
+                <div class="footer-content__text">
+                    <div class="footer-content__text_header">Успей купить!</div>
+                    <p>Подпишись и успей словить все акции</p>
+                </div>
+                <div class="feedback">
+                    <div class="feedback__form">
+                        <input type="text" id="feedback-email" placeholder="E-mail">
+                        <span id="valid"></span>
+                        <input type="checkbox" id="feedback-checkbox">
+                        <label for="feedback-checkbox" class="checkbox-label">подписаться на новости</label>
+                    </div>
+                    <button class="feedback-submit" type="submit">подписаться</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="js/scripts.js"></script>
+</body>
+</html>

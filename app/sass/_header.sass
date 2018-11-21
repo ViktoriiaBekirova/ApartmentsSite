@@ -1,0 +1,126 @@
+.header
+  width: 100%
+  height: auto
+  background-color: $colorDark
+  color: $textWhite
+  @media (max-width: $wide-desktop)
+    padding: 0 rem(40)
+  @media (max-width: $mobile)
+    padding: 0 rem(20)
+  &__logo
+    position: relative
+    width: rem(34)
+    height: rem(78)
+    margin: rem(30) rem(123) rem(17) 0
+    cursor: pointer
+    @media (max-width: 1750px)
+      margin-right: rem(60)
+    @media (max-width: $mobile)
+      margin-right: rem(40)
+  &__menu
+    align-self: center
+    margin-right: rem(248)
+    @media (max-width: 1750px)
+      margin-right: rem(60)
+    @media (max-width: $mobile)
+      margin-right: 0
+
+.header-container
+  display: flex
+  justify-content: center
+  @media (max-width: $wide-desktop)
+    justify-content: space-between
+
+.left-block
+  display: flex
+  justify-content: flex-start
+
+.menu-header
+  display: none
+  @include font(32)
+  text-transform: uppercase
+  margin-right: rem(40)
+  align-self: center
+  cursor: pointer
+  &:hover
+    opacity: 0.7
+  @media (max-width: $wide-desktop)
+    display: block
+  @media (max-width: 400px)
+    @include font(26)
+
+.menu-close
+  position: absolute
+  top: rem(145)
+  right: rem(40)
+  width: rem(30)
+  height: rem(30)
+  cursor: pointer
+  z-index: 2
+  transform: scale(0)
+  &.scale-close
+    transform: scale(1)
+    transition: 0.5s ease
+  @media (max-width: $mobile)
+    width: rem(20)
+    height: rem(20)
+    right: rem(20)
+
+.menu
+  display: flex
+  @include font(24)
+  text-transform: capitalize
+  z-index: 1
+  @media (max-width: $wide-desktop)
+    display: none
+    flex-direction: column
+    position: absolute
+    width: 100vw
+    padding: rem(15) 0 rem(15) rem(135)
+    top: rem(120)
+    left: 0
+    background-color: $colorDark
+    @media (max-width: $mobile)
+      padding: rem(15) 0 rem(15) rem(20)
+    @media (max-width: 400px)
+      @include font(18)
+  &__link
+    padding-right: rem(45)
+    cursor: pointer
+    @media (max-width: $wide-desktop)
+      padding-right: 0
+      padding-bottom: rem(10)
+    &:hover
+      opacity: 0.7
+    &:last-child
+      padding-right: 0
+
+.back-call
+  display: flex
+  flex-direction: column
+  margin-top: rem(33)
+  @media (max-width: $mobile)
+    display: none
+  &__text
+    padding-bottom: rem(6)
+    @include font(32)
+    color: $textWhite
+    &:hover
+      opacity: 0.7
+  &__tel
+    @include font(20)
+    color: $textWhite
+    &:hover
+      opacity: 0.7
+
+.back-call-img
+  display: none
+  position: relative
+  width: rem(40)
+  height: rem(40)
+  margin-right: rem(20)
+  align-self: center
+  @media (max-width: $mobile)
+    display: block
+  @media (max-width: 400px)
+    margin-right: 0

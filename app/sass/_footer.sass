@@ -1,0 +1,112 @@
+.footer
+  position: relative
+  width: 100%
+  height: auto
+  background-color: $colorBlue
+.footer-content
+  display: flex
+  justify-content: space-between
+  padding: 0 rem(105) 0 rem(55)
+  @media (max-width: $small-desktop)
+    flex-direction: column
+  @media (max-width: $mobile)
+    padding: 0 rem(40)
+  @media (max-width: 380px)
+    padding: 0 rem(20)
+  &__text
+    padding: rem(45) 0 rem(70) 0
+    color: $backgroundColor
+    @media (max-width: $small-desktop)
+      padding-bottom: 0
+    &_header
+      padding-bottom: rem(9)
+      @include OpenSansSemibold
+      @include font(34)
+  .feedback
+    position: relative
+    display: flex
+    padding: rem(61) 0 rem(50) 0
+    @media (max-width: 780px)
+      flex-direction: column
+    &__form
+      display: flex
+      flex-direction: column
+  #feedback-email
+    width: rem(318)
+    height: rem(50)
+    padding-left: rem(31)
+    margin-right: rem(53)
+    margin-bottom: rem(19)
+    border: none
+    border-radius: 3px
+    background-color: $backgroundColor
+    color: $colorBlue
+    @media (max-width: 380px)
+      width: rem(280)
+    input[type="email"]
+      @include OpenSansRegular
+      @include font(18)
+      color: $colorBlue
+    input[type="email"]::placeholder
+      color: $colorBlue
+      opacity: 1
+    input[type="email"]:-ms-input-placeholder
+      color: $colorBlue
+  #feedback-checkbox
+    position: absolute
+    visibility: hidden
+    width: 0
+  .checkbox-label
+    position: relative
+    display: block
+    padding-left: rem(30)
+    @include font(18)
+    color: $backgroundColor
+    cursor: pointer
+    &:after,
+    &:before
+      position: absolute
+      content: ''
+      left: 0
+      top: rem(4)
+      width: rem(20)
+      height: rem(20)
+      transition: all 0.3s ease
+      background-color: $backgroundColor
+      border-radius: 3px
+    &:after
+      background-image: url('../img/check.png')
+      background-position: center
+      background-repeat: no-repeat
+      opacity: 0
+      transform: scale(0.7)
+  #feedback-checkbox:checked
+    & + .checkbox-label
+      &:after
+        opacity: 1
+        transform: scale(1)
+      &:before
+        opacity: 0
+
+  .feedback-submit
+    width: rem(214)
+    height: rem(50)
+    background-color: $colorGold
+    color: $backgroundColor
+    text-transform: uppercase
+    @include font(18)
+    border: none
+    @media (max-width: 780px)
+      margin-top: rem(40)
+
+#valid
+  position: absolute
+  top: rem(110)
+  left: rem(200)
+  @include font(18)
+  color: #ff0000
+
+
+
+
+

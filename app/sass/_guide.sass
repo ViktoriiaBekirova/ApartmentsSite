@@ -1,0 +1,35 @@
+//main color
+$backgroundColor: #ffffff
+$colorDark: #002f2f
+$colorGold: #a7a37e
+$colorRed: #ff4444
+$colorBlue: #046380
+
+$textBlack: #000000
+$textWhite: #fefefe
+
+
+$basefontSize: 16
+//Transitions
+$wide-desktop: 1440px
+$middle-desktop: 1366px
+$desktop: 1281px
+$small-desktop: 1140px
+$tablet: 1024px
+$fablet: 880px
+$mobile: 600px
+
+//fonts
+@mixin font($size)
+  font-size: $size + px
+  font-size: ($size/$basefontSize) + rem
+
+// Sizes
+@function rem($val)
+  @return #{$val / $basefontSize}rem
+
+*
+  box-sizing: border-box
+
+
+
