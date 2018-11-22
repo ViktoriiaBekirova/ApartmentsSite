@@ -20,7 +20,7 @@
 .sorting
   display: flex
   padding: rem(28) 0 rem(44) rem(110)
-  @media (max-width: $fablet)
+  @media (max-width: $small-desktop)
     padding: rem(28) 0 rem(44) 0
     justify-content: center
   &__header
@@ -75,19 +75,10 @@
 
 .main-content
   display: flex
+  flex-wrap: wrap
   justify-content: center
-  &__container
-    display: flex
-    flex-wrap: wrap
-    justify-content: flex-start
-    margin-right: rem(-50)
-    width: rem(1115)
-    @media (max-width: $small-desktop)
-      width: rem(740)
-    @media (max-width: 780px)
-      margin-right: rem(-40)
-    @media (max-width: 760px)
-      width: rem(370)
+  padding: 0 rem(30)
+  margin-right: rem(-50)
   @media (max-width: 1300px)
     padding: 0 40px
   @media (max-width: $mobile)
@@ -103,6 +94,7 @@
   margin-right: rem(50)
   margin-bottom: rem(55)
   border: 1px solid $colorGold
+  border-radius: 5px
   @media (max-width: 780px)
     margin-right: rem(40)
   @media (max-width: 380px)
@@ -128,9 +120,6 @@
   &__flat
     position: relative
     overflow: hidden
-    //display: flex
-    //justify-content: center
-    //align-items: center
     width: 100%
     height: rem(284)
     img
@@ -141,11 +130,6 @@
       margin: auto
       height: auto
       width: auto
-      //object-fit: scale-down
-      //top: auto
-      //left: auto
-      //width: auto
-      //height: auto
     &_icon
       position: absolute
       width: rem(20)
@@ -198,7 +182,9 @@
     @include OpenSansSemibold
     color: $textWhite
     text-transform: uppercase
+    letter-spacing: rem(1.5)
     border: none
+    border-radius: 0  0 rem(4) rem(4)
     &.booked
       background-color: $colorGold
     &.free

@@ -3,9 +3,9 @@ let app = {
     counter: 0,
     step: 12,
     items: [],
-    appElement: document.querySelector('.main-content__container'),
-    itemElement: document.querySelector('.card'),
-    moreButton: document.querySelector('.show-more')
+    appElement: $('.main-content'),
+    itemElement: $('.card'),
+    moreButton: $('.show-more')
 }
 
 function getItems () {
@@ -23,7 +23,6 @@ function setItemsInContent () {
     console.log('Вставляем items на страницу')
     console.log('Все items:', app.items)
 
-    // let range = [app.counter, app.counter + app.step]
     let range = [app.counter, app.counter + app.step]
     console.log('Диапазон:', range)
 
@@ -56,12 +55,12 @@ function setItemsInContent () {
         app.step = 20
         // удаление карточек sale если они пустые
         $(function() {
-            $(".card__sale_text").each(function(ind, elem){
+            $('.card__sale_text').each(function(ind, elem){
                 if ($(elem).html().length === 0 ) {
                     $(elem).remove()
                 }
             });
-            $(".card__sale_price").each(function(ind, elem){
+            $('.card__sale_price').each(function(ind, elem){
                 if ($(elem).html().length === 0 ) {
                     $(elem).remove()
                 }
@@ -78,7 +77,7 @@ function hideButton () {
 
 function addListeners () {
 
-    app.moreButton.addEventListener('click', function (e) {
+    app.moreButton.on('click', function (e) {
         e.preventDefault()
         setItemsInContent()
     })
@@ -96,7 +95,7 @@ function init () {
     addListeners()
 }
 
-document.addEventListener("DOMContentLoaded", init);
+document.addEventListener('DOMContentLoaded', init);
 
 
 //раскрытие/закрытие меню
@@ -143,25 +142,25 @@ $(function () {
 // сортировка переключение
 $(function () {
     $('.sorting__content_price').on('click',function(){
-        $(".sorting__content_choice").toggleClass('open')
+        $('.sorting__content_choice').toggleClass('open')
     })
 })
 
 $(function () {
     $('.sorting__content_room').on('click',function(){
-        $(".sorting__content_choice-close").toggleClass('close')
+        $('.sorting__content_choice-close').toggleClass('close')
     })
 })
 
 
 // сортировка по цене убывание/возрастание
 $(function sortPrice (){
-    document.querySelector('.sorting__content_price').addEventListener("click", function () {
+    document.querySelector('.sorting__content_price').addEventListener('click', function () {
         let elements = document.querySelectorAll('.card');
         element = Array.prototype.slice.call(elements)
         const sorted = element.sort(function (a, b) {
-            const priceElA = a.querySelector(".card__price");
-            const priceElB = b.querySelector(".card__price");
+            const priceElA = a.querySelector('.card__price');
+            const priceElB = b.querySelector('.card__price');
             const getPrice = function(el) {
                 return parseInt(el.innerHTML.replace(/ /g, ""))
             };
@@ -173,7 +172,7 @@ $(function sortPrice (){
             }
 
         });
-        const resultEl = document.querySelector(".main-content__container");
+        const resultEl = document.querySelector('.main-content');
         resultEl.innerHTML = null;
         sorted.forEach(function (el) {
             return resultEl.appendChild(el)
@@ -184,12 +183,12 @@ $(function sortPrice (){
 
 // сортировка по площади комнат убывание/возрастание
 $(function sortRoom () {
-    document.querySelector('.sorting__content_room').addEventListener("click", function()  {
+    document.querySelector('.sorting__content_room').addEventListener('click', function()  {
        let elements = document.querySelectorAll('.card');
         element = Array.prototype.slice.call(elements)
         const sorted = element.sort(function (a, b) {
-            const roomElA = a.querySelector(".card__options_area p");
-            const roomElB = b.querySelector(".card__options_area p");
+            const roomElA = a.querySelector('.card__options_area p');
+            const roomElB = b.querySelector('.card__options_area p');
             const getRoom = function(el) {
                 return parseInt(el.innerHTML.replace(/ /g, ""))
             };
@@ -200,7 +199,7 @@ $(function sortRoom () {
                 return getRoom(roomElA) - getRoom(roomElB);
             }
         });
-        const resultEl = document.querySelector(".main-content__container");
+        const resultEl = document.querySelector('.main-content');
         resultEl.innerHTML = null;
         sorted.forEach(function (el) {
             return resultEl.appendChild(el)
@@ -211,7 +210,7 @@ $(function sortRoom () {
 // плавное поднятие страницы наверх
 $(function () {
     $('.go-top').on('click', function () {
-        $("html, body").animate({scrollTop: 0}, 600);
+        $('html, body').animate({scrollTop: 0}, 600);
         return false;
     });
 });
@@ -221,11 +220,11 @@ $(document).ready(function() {
     let $window = $(window).on('scroll', function() {
         let top = $window.scrollTop();
 
-        if ( top > 400 ) {
-            $(".go-top").addClass('active');
+        if ( top >= 400 ) {
+            $('.go-top').addClass('active');
         }
         if ( top < 400 ) {
-            $(".go-top").removeClass('active');
+            $('.go-top').removeClass('active');
         }
     });
 });
@@ -237,40 +236,40 @@ function validateEmail(email) {
 }
 
 function validate() {
-    let valid = $("#valid")
-        email = $("#feedback-email")
-        emailVal = $("#feedback-email").val();
+    let valid = $('#valid')
+        email = $('#feedback-email')
+        emailVal = $('#feedback-email').val();
 
     valid.text("");
     if (validateEmail(emailVal)) {
         email.css({'border':'none'});
-        valid.text("email введен верно").css("color","#ffffff");
+        valid.text('email введен верно').css('color','#ffffff');
         setTimeout(function () {
-            email.val("")
-            valid.text("")
+            email.val('')
+            valid.text('')
         },2000)
     } else {
-        valid.text("email введен не верно").css("color","#ff0000");
+        valid.text('email введен не верно').css('color','#ff0000');
         email.css({'border':'1px solid #ff0000'});
         setTimeout(function () {
-            valid.text("")
+            valid.text('')
         },3000)
 
         email.keyup(function(){
             valid.empty();
-            valid.text("");
+            valid.text('');
             email.css({'border':'none'});
         });
     }
     if (emailVal === '') {
-        valid.text("поле не должно быть пустым").css("color","#ff0000");
+        valid.text('поле не должно быть пустым').css('color','#ff0000');
         email.css({'border':'1px solid #ff0000'});
         setTimeout(function () {
-            valid.text("")
+            valid.text('')
             email.css({'border':'none'});
         },3000)
     }
     return false;
 }
-$(".feedback-submit").bind("click", validate);
+$(".feedback-submit").bind('click', validate);
 

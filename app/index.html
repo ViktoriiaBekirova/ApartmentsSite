@@ -65,32 +65,30 @@
                     </div>
                 </div>
                 <div class="main-content">
-                    <div class="main-content__container">
-                        <div class="card" hidden>
-                            <div class="card__sale">
-                                <div class="card__sale_price"></div>
-                                <div class="card__sale_text"></div>
+                    <div class="card" hidden>
+                        <div class="card__sale">
+                            <div class="card__sale_price"></div>
+                            <div class="card__sale_text"></div>
+                        </div>
+                        <div class="card__flat">
+                            <img id="img-card" src="./img/room2.png" alt="foto_flat">
+                            <div class="card__flat_icon">
+                                <img id="img-star" src="./img/room2.png" alt="tag">
                             </div>
-                            <div class="card__flat">
-                                <img id="img-card" src="./img/room2.png" alt="foto_flat">
-                                <div class="card__flat_icon">
-                                    <img id="img-star" src="./img/room2.png" alt="tag">
-                                </div>
-                            </div>
-                            <div class="card__info">
-                                <div class="padding-content">
-                                    <h1 class="card__header">header</h1>
-                                    <div class="space-between">
-                                        <div class="card__options">
-                                            <div class="card__options_finish"><p></p></div>
-                                            <div class="card__options_area"><p></p></div>
-                                            <div class="card__options_floor"><p></p></div>
-                                        </div>
-                                        <div class="card__price"></div>
+                        </div>
+                        <div class="card__info">
+                            <div class="padding-content">
+                                <h1 class="card__header">header</h1>
+                                <div class="space-between">
+                                    <div class="card__options">
+                                        <div class="card__options_finish"><p></p></div>
+                                        <div class="card__options_area"><p></p></div>
+                                        <div class="card__options_floor"><p></p></div>
                                     </div>
+                                    <div class="card__price"></div>
                                 </div>
-                                <button class="card__button"></button>
                             </div>
+                            <div class="card__button"></div>
                         </div>
                     </div>
                 </div>
@@ -105,13 +103,15 @@
                     <p>Подпишись и успей словить все акции</p>
                 </div>
                 <div class="feedback">
-                    <div class="feedback__form">
-                        <input type="text" id="feedback-email" placeholder="E-mail">
-                        <span id="valid"></span>
-                        <input type="checkbox" id="feedback-checkbox">
-                        <label for="feedback-checkbox" class="checkbox-label">подписаться на новости</label>
-                    </div>
-                    <button class="feedback-submit" type="submit">подписаться</button>
+                    <form class="feedback__form">
+                        <div class="feedback__form-container">
+                            <input type="text" id="feedback-email" placeholder="E-mail">
+                            <span id="valid"></span>
+                            <input type="checkbox" id="feedback-checkbox">
+                            <label for="feedback-checkbox" class="checkbox-label">подписаться на новости</label>
+                        </div>
+                        <input class="feedback-submit" type="submit" value="подписаться">
+                    </form>
                 </div>
             </div>
         </div>
